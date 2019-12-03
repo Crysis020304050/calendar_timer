@@ -3,46 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
-    <style>
+    <link href="assets/css/reset.css" rel="stylesheet">
+    <link href="assets/css/style.css" rel="stylesheet">
 
-        body {
-            font-family: monospace;
-        }
-
-        table {
-            margin: 0 auto;
-
-            --mainColor: #475570;
-            color: var(--mainColor);
-            border-collapse: collapse;
-
-
-        }
-
-        thead {
-            background-color: #FFDE59;
-
-        }
-        .monthName{
-            text-transform: capitalize;
-        }
-        th{
-            padding: 10px;
-            box-sizing: border-box;
-            text-transform: uppercase;
-        }
-
-        td {
-            border-color: var(--mainColor);
-            border-width: 1px;
-            border-style: solid;
-            font-size: 14px;
-        }
-
-    </style>
 </head>
 <body>
 
+<button id="previosMonth">Previos month</button>
+<button id="nextMonth">Next month</button>
 
 <!--
 <table class="month">
@@ -114,6 +82,7 @@
 
 
 <script type="module" src="assets/view_model/index.js"></script>
+
 
 </body>
 </html>

@@ -1,0 +1,44 @@
+body {
+    font-family: monospace;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+
+}
+
+body > * {
+    margin: 0 auto;
+    margin-bottom: 5px;
+    width: 270px;
+
+}
+
+table {
+    margin: 0 auto;
+
+    --mainColor: #475570;
+    color: var(--mainColor);
+    border-collapse: collapse;
+
+
+}
+
+thead {
+    background-color: #FFDE59;
+
+}
+.monthName{
+    text-transform: capitalize;
+}
+th{
+    padding: 10px;
+    box-sizing: border-box;
+    text-transform: uppercase;
+}
+
+td {
+    border-color: var(--mainColor);
+    border-width: 1px;
+    border-style: solid;
+    font-size: 14px;
+}

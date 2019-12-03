@@ -2,9 +2,19 @@
 
 import model from '../model/index.js'
 import createCalendar from "./createCalendar.js";
+import createPreviosMonthButton from './createPreviosMonthButton.js';
+import createNextMonthButton from './createNextMonthButton.js';
+
+export let someDate = new Date();
+
+createPreviosMonthButton();
+createNextMonthButton();
 
 
-const month = new model.Month( new Date() );
+
+const month = new model.Month( someDate );
+
+
 
 document.body.appendChild( createCalendar(month) );
 
