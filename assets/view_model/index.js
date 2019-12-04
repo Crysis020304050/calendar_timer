@@ -12,11 +12,12 @@ createNextMonthButton();
 
 
 
-const month = new model.Month( someDate );
+export let month = new model.Month( someDate );
 
 
 
-document.body.appendChild( createCalendar(month) );
+const calendar = document.body.appendChild( createCalendar(month) );
+calendar.setAttribute("id", "calendar");
 
 /*
 const date = new Date();
