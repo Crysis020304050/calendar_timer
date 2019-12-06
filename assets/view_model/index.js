@@ -6,6 +6,7 @@ import createPreviosMonthButton from './createPreviosMonthButton.js';
 import createNextMonthButton from './createNextMonthButton.js';
 import createNewYearTimer from './createNewYearTimer.js';
 
+
 export let someDate = new Date();
 
 createPreviosMonthButton();
@@ -14,12 +15,15 @@ createNewYearTimer();
 
 
 
+
 export let month = new model.Month( someDate );
 
 
 
-const calendar = document.body.appendChild( createCalendar(month) );
+const calendarContainer = document.getElementById("calendarContainer");
+const calendar = createCalendar(month);
 calendar.setAttribute("id", "calendar");
+calendarContainer.appendChild(calendar);
 
 /*
 const date = new Date();

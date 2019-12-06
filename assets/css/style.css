@@ -1,4 +1,18 @@
 body {
+    min-width: 100vw;
+    min-height: 100vh;
+
+    position: relative;
+}
+
+body * {
+    box-sizing: border-box;
+}
+
+
+
+
+#calendarContainer{
     font-family: monospace;
     display: flex;
     flex-direction: column;
@@ -6,7 +20,7 @@ body {
 
 }
 
-body > * {
+#calendarContainer > * {
     margin: 0 auto;
     margin-bottom: 5px;
     width: 270px;
@@ -41,4 +55,123 @@ td {
     border-width: 1px;
     border-style: solid;
     font-size: 14px;
+}
+
+
+
+
+.mainContainer {
+
+    max-width: 300px;
+
+    width: 100%;
+    padding: 40px 15px 40px 15px;
+    border-radius: 15px;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    background-color: #2C2626;
+    border: 3px solid #4446A2;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    overflow: hidden;
+
+
+}
+
+.closeNoteButton {
+    background-color: red;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    align-self: flex-end;
+    margin-top: -30p
+}
+
+.pendingTasks {
+
+    font-size: 30px;
+    color: white;
+    align-self: center;
+    flex-basis: 50px;
+
+}
+
+.task {
+    height: 55px;
+    border: 1px solid white;
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 10px;
+    color: white;
+    margin: 10px 0;
+}
+
+.userTask {
+    flex-basis: 135px;
+    align-self: stretch;
+    font-size: 16px;
+    overflow-x: auto;
+    white-space: pre;
+
+}
+
+.completeButton {
+    background-color: #491DF4;
+    border-radius: 5px;
+    padding: 4px;
+    cursor: pointer;
+
+}
+
+.completeButton > input[type="checkbox"]{
+    display: none;
+}
+
+
+.userTaskDone {
+    text-decoration: line-through;
+}
+
+
+.removeButton {
+    background-color: #E80001;
+    border-radius: 10px;
+    padding: 7px;
+    font-size: 10px;
+    cursor: pointer;
+
+}
+
+.inputTask {
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+}
+
+.inputValue {
+    height: 30px;
+    width: 250px;
+}
+
+.inputValueWrong {
+    background-color: red;
+}
+
+#addTask {
+    font-size: 12px;
+    height: 30px;
+    color: black;
+    padding: 10px;
+    background-color: silver;
+    cursor: pointer;
+}
+
+#tasksList {
+    display: flex;
+    flex-direction: column-reverse;
 }

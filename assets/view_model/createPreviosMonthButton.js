@@ -18,8 +18,10 @@ export default function () {
         const month = new model.Month( someDate );
 
         document.getElementById("calendar").remove();
-        const calendar = document.body.appendChild( createCalendar(month) );
+        const calendarContainer = document.getElementById("calendarContainer");
+        const calendar = createCalendar(month);
         calendar.setAttribute("id", "calendar");
+        calendarContainer.appendChild(calendar);
 
     }
 

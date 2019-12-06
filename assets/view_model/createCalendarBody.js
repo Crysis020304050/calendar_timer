@@ -1,5 +1,6 @@
 'use strict';
 
+import createNoteElement from "./createNoteElement.js";
 
 import {someDate} from './index.js';
 
@@ -29,6 +30,8 @@ function createAllWeeks(month) {
         const trWeek = createTr();
         week.days.forEach( day => {
            const tdDay = createTd();
+
+
            tdDay.innerText = day.date.getDate();
            if (day._isCurrent) {
                tdDay.style.color= 'red';
@@ -36,15 +39,34 @@ function createAllWeeks(month) {
            if (day.date.getMonth() !== someDate.getMonth()) {
                tdDay.style.opacity = '0.3';
            }
+           else {
+               tdDay.style.cursor = "pointer";
+               tdDay.addEventListener('click', function () {
+                   const container = document.getElementById("calendarContainer");
+                   container.style.display = "none";
 
-           trWeek.appendChild(tdDay);
+                   if (document.getElementById(`${day.date.getTime()}`) === null) {
+                       const notesContainer = document.getElementById("notesContainer");
+                       const task = createNoteElement();
+                       task.setAttribute("id", `${day.date.getTime()}`);
+                       notesContainer.appendChild(task);
+                   }
+                   else {
+                       document.getElementById(`${day.date.getTime()}`).style.display = "flex";
+                   }
+
+
+               });
+
+           }
+            trWeek.appendChild(tdDay);
+
+
         });
         weeks.push(trWeek);
     });
 
-    /*month.weeks.forEach( week => {
-        week.days.forEach( item => console.log(item.date.getMonth()));
-    });*/
+
 
     return weeks;
 
